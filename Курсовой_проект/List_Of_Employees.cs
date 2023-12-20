@@ -1,4 +1,6 @@
-﻿namespace Курсовой_проект
+﻿using System.Security.Cryptography;
+
+namespace Курсовой_проект
 {
     class List_Of_Employees : List_Human
     {
@@ -21,7 +23,17 @@
             return null_employee;
        
         }
+
         public string Show_Employees(int i) => $"{_employees[i].Personal_ID} - {_employees[i].Name} {_employees[i].Surname} {_employees[i].Patronymic} {_employees[i].Salary}. Задача - {_employees[i].Task}";
+
+        public int Calculate_The_Salary(int months)
+        {
+            int sum;
+            for (int i = 0; i < _employees.Count; i++)
+            {
+
+            }
+        }
 
     }
 }
