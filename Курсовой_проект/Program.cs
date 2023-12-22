@@ -54,7 +54,8 @@ namespace Курсовой_проект
                         workspace.Assigning_A_Value("\nВведите личный индекс сотрудника, которого хотите хотите найти:", ref index);
                         Employee new_employee = new Employee();
                         new_employee = employees.Search_Employee(index);
-                        workspace.Write_To_Console($"Индекс - {employees.Search_Employee(index).Personal_ID}\tДанные - {employees.Search_Employee(index).Name} {employees.Search_Employee(index).Surname} {employees.Search_Employee(index).Patronymic} {employees.Search_Employee(index).Salary}");
+                        if (new_employee.Personal_ID == -1) workspace.Write_To_Console("Такого сотрудника не существует");
+                        else workspace.Write_To_Console($"Индекс - {employees.Search_Employee(index).Personal_ID}\tДанные - {employees.Search_Employee(index).Name} {employees.Search_Employee(index).Surname} {employees.Search_Employee(index).Patronymic} {employees.Search_Employee(index).Salary}");
                     }
 
                     if (number_employee == 4)
@@ -107,7 +108,8 @@ namespace Курсовой_проект
                         workspace.Assigning_A_Value("\nВведите личный индекс начальника, которого хотите хотите найти:", ref index);
                         Chief new_chief = new Chief();
                         new_chief = chiefs.Search_Chief(index);
-                        workspace.Write_To_Console($"Индекс - {chiefs.Search_Chief(index).Personal_ID}\tДанные - {chiefs.Search_Chief(index).Name} {chiefs.Search_Chief(index).Surname} {chiefs.Search_Chief(index).Patronymic} {chiefs.Search_Chief(index).Salary}");
+                        if (new_chief.Personal_ID == -1) workspace.Write_To_Console("Такого начальника не существует");
+                        else workspace.Write_To_Console($"Индекс - {chiefs.Search_Chief(index).Personal_ID}\tДанные - {chiefs.Search_Chief(index).Name} {chiefs.Search_Chief(index).Surname} {chiefs.Search_Chief(index).Patronymic} {chiefs.Search_Chief(index).Salary}");
                     }
 
                     if (number_chief == 4)
@@ -153,7 +155,6 @@ namespace Курсовой_проект
                 }
 
 
-
                 if (number == 4)
                 {
                     workspace.Write_To_Console("\nРабота с играми:");
@@ -172,8 +173,7 @@ namespace Курсовой_проект
                         for (int i = 0; i < games.Number_Of_Games(); i++) workspace.Write_To_Console(games.Show_Game(i));
                     }
                 }
-
-
+                
             } while (number == 1 || number == 2 || number == 3 || number == 4);
         }
     }

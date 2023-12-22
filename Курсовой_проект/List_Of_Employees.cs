@@ -19,21 +19,11 @@ namespace Курсовой_проект
             {
                 if (_employees[i].Personal_ID == id) return _employees[i];
             }
-            Employee null_employee = new Employee("", "", "", 0, -1);
+            Employee null_employee = new Employee(" ", " ", " ", 0, -1);
             return null_employee;
        
         }
 
         public string Show_Employees(int i) => $"{_employees[i].Personal_ID} - {_employees[i].Name} {_employees[i].Surname} {_employees[i].Patronymic} {_employees[i].Salary}. Задача - {_employees[i].Task}";
-
-        public int Calculate_The_Salary(int months)
-        {
-            int sum;
-            for (int i = 0; i < _employees.Count; i++)
-            {
-
-            }
-        }
-
     }
 }

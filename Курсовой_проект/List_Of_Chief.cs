@@ -17,7 +17,7 @@
             {
                 if (_chiefs[i].Personal_ID == id) return _chiefs[i];
             }
-            Chief null_chief = new Chief("", "", "", 0, -1);
+            Chief null_chief = new Chief(" ", " ", " ", 0, -1);
             return null_chief;
         }
 

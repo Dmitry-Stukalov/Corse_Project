@@ -47,19 +47,12 @@ namespace Курсовой_проект
             }
         }
 
-        public Game(string title, int target_audience)
+        public Game(string title, int target_audience, int how_long_create, int how_much_money_earned)
         {
             Title = title;
             Target_Audience = target_audience;
-        }
-
-        public int Income(List_Of_Employees employees)
-        {
-            int income = 0;
-            for (int i = 0; i < employees.ID - 1; i++)
-            {
-                income += employees[i]
-            }
+            How_Long_Create = how_long_create;
+            How_Much_Money_Earned = how_much_money_earned;
         }
     }
 }

@@ -4,6 +4,11 @@ namespace Курсовой_проект
 {
     class Employee: Human
     {
+        private string _name;
+        private string _surname;
+        private string _patronymic;
+        private int _salary;
+        private int personal_id;
         private Task _task;
 
         public Task Task
@@ -11,7 +16,45 @@ namespace Курсовой_проект
             get { return _task; }
             set { _task = value; }
         }
-        
+        public override string Name
+        {
+            get { return _name; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value)) _name = value;
+                else throw new ArgumentOutOfRangeException("The _name cannot be empty");
+            }
+        }
+        public override string Surname
+        {
+            get { return _surname; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value)) _surname = value;
+                else throw new ArgumentOutOfRangeException("The _surname cannot be empty");
+            }
+        }
+        public override string Patronymic
+        {
+            get { return _patronymic; }
+            set
+            {
+                if (!string.IsNullOrEmpty(value)) _patronymic = value;
+                else throw new ArgumentOutOfRangeException("The _patronymic cannot be empty");
+            }
+        }
+        public override int Salary
+        {
+            get { return _salary; }
+            set
+            {
+                if (value >= 0) _salary = value;
+                else throw new ArgumentOutOfRangeException("The _salary connot be negative");
+            }
+        }
+        public override int Personal_ID { get { return personal_id; } set { personal_id = value; } }
+
+
         public Employee()
         {
 
@@ -21,11 +64,14 @@ namespace Курсовой_проект
             Personal_ID = id;
         }
 
+        public void Prize(int prize)
+        {
+            Salary += prize;
+        }
         public void Get_Task(Task task)
         {
             Task = task;
         }
-
         public string Play_The_Game(ref List_Of_Employees employees, int index, string game)
         {
             Random rand = new Random();

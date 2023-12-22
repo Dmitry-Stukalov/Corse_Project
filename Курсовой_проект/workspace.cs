@@ -57,10 +57,10 @@ namespace Курсовой_проект
 
         public static void Catch_Exception_Games(ref List_Of_Games games)
         {
-            Write_To_Console("\nВведите название и возраст целевой аудитории игры игры:");
+            Write_To_Console("\nВведите название, возраст целевой аудитории, сколько месяцев было затрачено на разработку и сколько денег было затрачено на разработку:");
             try
             {
-                Game new_game = new Game(Read_From_Console(), Read_From_Console());
+                Game new_game = new Game(Read_From_Console(), Convert.ToInt32(Read_From_Console()), Convert.ToInt32(Read_From_Console()), Convert.ToInt32(Read_From_Console()));
                 games.Add_Game(new_game);
                 Write_To_Console("Данные были добавлены в список игр");
             }

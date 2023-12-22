@@ -11,7 +11,7 @@
 
         public int Number_Of_Games() => _games.Count;
 
-        public string Show_Game(int i) => $"название - {_games[i].Title}\tЦелевая аудитория - {_games[i].Target_Audience}";
+        public string Show_Game(int i) => $"название - {_games[i].Title}\tЦелевая аудитория - {_games[i].Target_Audience}\tЗатрачено месяцев на разработку - {_games[i].How_Long_Create}\tЗатрачено денег на разработку - {_games[i].How_Much_Money_Earned}";
 
         public bool Search_Game(string title)
         {
